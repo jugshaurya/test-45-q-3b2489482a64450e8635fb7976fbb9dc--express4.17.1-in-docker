@@ -1,10 +1,11 @@
 # express4.17.1-in-docker
+
 EXPRESS 4.17 SPA
 
 IMPORTANT NOTES:
 
-    1. Make sure you follow the steps mentioned under "PROJECT START STEPS" and ensure that the steps execute successfully. 
-    2. Make sure you follow the steps mentioned under "DOCKER START STEPS" and ensure that the steps execute successfully. 
+    1. Make sure you follow the steps mentioned under "PROJECT START STEPS" and ensure that the steps execute successfully.
+    2. Make sure you follow the steps mentioned under "DOCKER START STEPS" and ensure that the steps execute successfully.
 
 PROJECT START STEPS:
 
@@ -18,5 +19,10 @@ PROJECT START STEPS:
         1.b. Run the following commands respectively in the terminal/command line to build and run the app:
             - npm install
             - npm start
-    
+
     2. Go to http://localhost:8080 in your browser to view it.
+
+## tasks:
+
+[x] get all the leads
+[ ] get a lead
