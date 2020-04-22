@@ -3,14 +3,9 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var apiRouter = require("./routes/api");
-
-var app = express();
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/cj11", {
+mongoose.set("useCreateIndex", true);
+mongoose.connect("mongodb://localhost:27017/cjh", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -21,6 +16,12 @@ db.once("open", function () {
   return;
   // console.log("connected Shaurya.");
 });
+
+var app = express();
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var apiRouter = require("./routes/api");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
