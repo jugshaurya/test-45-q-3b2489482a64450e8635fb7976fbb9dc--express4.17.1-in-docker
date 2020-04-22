@@ -3,19 +3,22 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const mongoose = require("mongoose");
-mongoose.set("useCreateIndex", true);
-mongoose.connect("mongodb://localhost:27017/cjh", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
+
+// in memory db
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "db.sqlite",
 });
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-  return;
-  // console.log("connected Shaurya.");
-});
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Connection has been established successfully.");
+  })
+  .catch((err) => {
+    console.error("Unable to connect to the database:", err);
+  });
 
 var app = express();
 
